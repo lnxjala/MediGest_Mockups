@@ -1,0 +1,385 @@
+/* ============================================================
+   SISTEMA DE GESTIÓN DE CITAS MÉDICAS
+   Archivo: pacientes.css
+   ============================================================ */
+
+/* ============================================================
+   1. VARIABLES GLOBALES
+   ============================================================ */
+:root {
+  --color-primary:       #1A6FC4;
+  --color-primary-dark:  #145899;
+  --color-primary-light: #E8F1FB;
+  --color-accent:        #2EAADC;
+
+  --color-white:         #FFFFFF;
+  --color-bg:            #F0F4F9;
+  --color-gray-100:      #F7F9FC;
+  --color-gray-200:      #E8EDF4;
+  --color-gray-400:      #A0AEBF;
+  --color-gray-600:      #6B7A90;
+  --color-gray-800:      #2D3748;
+  --color-text:          #1E2A3B;
+
+  --color-green:         #2F855A;
+  --color-green-light:   #F0FFF4;
+  --color-orange:        #C05621;
+  --color-orange-light:  #FFFAF0;
+  --color-red:           #C53030;
+  --color-red-light:     #FFF5F5;
+
+  --font-main:           'Outfit', 'Segoe UI', sans-serif;
+
+  --sidebar-width:       240px;
+  --header-height:       64px;
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a    { text-decoration: none; color: inherit; }
+ul   { list-style: none; }
+
+.brand-logo__image{
+  width: 100px;
+}
+/* ============================================================
+   3. LAYOUT
+   ============================================================ */
+.layout         { display: flex; min-height: 100vh; }
+.layout__main   { margin-left: var(--sidebar-width); flex: 1; display: flex; flex-direction: column; }
+.page-content   { padding: 28px; flex: 1; }
+
+/* ============================================================
+   4. SIDEBAR (igual al dashboard)
+   ============================================================ */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--color-white);
+  border-right: 1px solid var(--color-gray-200);
+  position: fixed;
+  top: 0; left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.sidebar__logo {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.sidebar__logo-icon {
+  width: 34px; height: 34px;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.sidebar__logo-icon svg { width: 18px; height: 18px; color: var(--color-white); }
+
+.sidebar__logo-text { font-size: 16px; font-weight: 700; color: var(--color-text); }
+
+.sidebar__nav  { padding: 16px 12px; flex: 1; }
+
+.nav-section-label {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--color-gray-400);
+  padding: 8px 8px 4px;
+}
+
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px; border-radius: var(--radius-sm);
+  color: var(--color-gray-600); font-size: 13.5px; font-weight: 500;
+  cursor: pointer; transition: background 0.15s, color 0.15s;
+  margin-bottom: 2px;
+}
+
+.nav-item:hover  { background: var(--color-gray-100); color: var(--color-text); }
+.nav-item.active { background: var(--color-primary-light); color: var(--color-primary); font-weight: 600; }
+.nav-item svg    { width: 17px; height: 17px; flex-shrink: 0; }
+
+.sidebar__user {
+  padding: 14px 16px;
+  border-top: 1px solid var(--color-gray-200);
+  display: flex; align-items: center; gap: 10px;
+}
+
+.sidebar__user-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--color-primary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: var(--color-white); flex-shrink: 0;
+}
+
+.sidebar__user-name { font-size: 13px; font-weight: 600; color: var(--color-text); }
+.sidebar__user-role { font-size: 11px; color: var(--color-gray-400); }
+
+/* ============================================================
+   5. HEADER
+   ============================================================ */
+.header {
+  height: var(--header-height);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px;
+  position: sticky; top: 0; z-index: 50;
+}
+
+.header__title    { font-size: 17px; font-weight: 700; color: var(--color-text); }
+.header__subtitle { font-size: 12px; color: var(--color-gray-400); font-weight: 400; }
+
+.header__right { display: flex; align-items: center; gap: 10px; }
+
+/* Botón "Nuevo paciente" en el header */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 36px; padding: 0 16px;
+  background: var(--color-primary); color: var(--color-white);
+  border: none; border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600; font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-primary:hover { background: var(--color-primary-dark); }
+.btn-primary svg   { width: 15px; height: 15px; }
+
+/* ============================================================
+   6. BARRA DE BÚSQUEDA Y FILTROS
+   ============================================================ */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  height: 38px;
+  flex: 1;
+  max-width: 360px;
+}
+
+.search-box svg   { width: 15px; height: 15px; color: var(--color-gray-400); flex-shrink: 0; }
+
+.search-box input {
+  border: none; outline: none; background: none;
+  font-family: inherit; font-size: 13px; color: var(--color-text);
+  width: 100%;
+}
+
+.search-box input::placeholder { color: var(--color-gray-400); }
+
+/* Selector de filtro */
+.filter-select {
+  height: 38px; padding: 0 12px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  font-family: inherit; font-size: 13px;
+  color: var(--color-gray-600); cursor: pointer; outline: none;
+}
+
+/* Texto contador */
+.toolbar__count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--color-gray-400);
+}
+
+/* ============================================================
+   7. TARJETAS DE PACIENTES (grid)
+   ============================================================ */
+.patients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.patient-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.patient-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+/* Cabecera de la card */
+.patient-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* Avatar con iniciales */
+.patient-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+/* Colores variados para los avatares */
+.patient-avatar--blue   { background: var(--color-primary); }
+.patient-avatar--teal   { background: #0694A2; }
+.patient-avatar--purple { background: #7E3AF2; }
+.patient-avatar--rose   { background: #E53E6A; }
+.patient-avatar--green  { background: var(--color-green); }
+
+.patient-card__name {
+  font-size: 14px; font-weight: 700; color: var(--color-text);
+  line-height: 1.2;
+}
+
+.patient-card__id {
+  font-size: 11px; color: var(--color-gray-400);
+}
+
+/* Estado (badge) alineado a la derecha */
+.patient-card__status { margin-left: auto; }
+
+/* Separador */
+.patient-card__divider {
+  height: 1px;
+  background: var(--color-gray-200);
+  margin-bottom: 14px;
+}
+
+/* Datos del paciente */
+.patient-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.patient-info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--color-gray-600);
+}
+
+.patient-info-row svg    { width: 13px; height: 13px; flex-shrink: 0; color: var(--color-gray-400); }
+.patient-info-row strong { color: var(--color-text); font-weight: 600; }
+
+/* Acciones */
+.patient-card__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  flex: 1;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-gray-100);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.btn-action:hover { background: var(--color-primary-light); color: var(--color-primary); border-color: var(--color-primary); }
+
+.btn-action--danger:hover { background: var(--color-red-light); color: var(--color-red); border-color: var(--color-red); }
+
+/* ============================================================
+   8. BADGES
+   ============================================================ */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 9px; border-radius: 99px;
+  font-size: 11px; font-weight: 600;
+}
+
+.badge::before {
+  content: ''; width: 5px; height: 5px;
+  border-radius: 50%; background: currentColor;
+}
+
+.badge--green  { background: var(--color-green-light);  color: var(--color-green); }
+.badge--orange { background: var(--color-orange-light); color: var(--color-orange); }
+.badge--blue   { background: var(--color-primary-light);color: var(--color-primary); }
+
+/* ============================================================
+   9. PAGINACIÓN
+   ============================================================ */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 28px;
+}
+
+.page-btn {
+  width: 34px; height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-white);
+  font-family: inherit; font-size: 13px;
+  color: var(--color-gray-600);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.page-btn:hover       { background: var(--color-primary-light); color: var(--color-primary); }
+.page-btn.active      { background: var(--color-primary); color: var(--color-white); border-color: var(--color-primary); font-weight: 700; }
+.page-btn svg         { width: 14px; height: 14px; }
+
+/* ============================================================
+   10. RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .sidebar         { display: none; }
+  .layout__main    { margin-left: 0; }
+  .patients-grid   { grid-template-columns: 1fr; }
+  .toolbar__count  { display: none; }
+}

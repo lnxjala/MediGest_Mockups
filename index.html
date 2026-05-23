@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============================================================
+       SISTEMA DE GESTIÓN DE CITAS MÉDICAS
+       Página: Login / Inicio de sesión
+       Archivo: login.html
+       Descripción: Pantalla de acceso al sistema
+       Autor: Proyecto Universitario
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión — MediCitas</title>
+
+  <!-- Google Fonts: Outfit (moderna, legible, estilo profesional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- CSS exclusivo de esta página -->
+  <link rel="stylesheet" href="styles/login.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       ESTRUCTURA PRINCIPAL: grid de 2 columnas
+       .login-page
+         ├── .login-panel-left   (branding + features)
+         └── .login-panel-right  (formulario)
+       ============================================================ -->
+
+  <main class="login-page">
+
+    <aside class="login-panel-left" aria-hidden="true">
+
+      <div class="brand-logo">
+        <div class="brand-logo__text">
+          <img class="brand-logo__image" src="./assets/logoMediGest-white.png" alt="logo">
+        </div>
+      </div>
+
+      <div class="panel-left__content">
+        <img class="panel-left__image" src="./assets/doc.png">
+      </div>
+
+    </aside>
+
+    <!-- ========================
+         PANEL DERECHO — Formulario
+         ======================== -->
+    <section class="login-panel-right">
+
+      <div class="login-card">
+
+        <!-- Encabezado del formulario -->
+        <header class="login-card__header">
+          <p class="login-card__welcome">Bienvenido de nuevo</p>
+          <h2 class="login-card__title">Iniciar sesión</h2>
+          <p class="login-card__subtitle">
+            Ingresa tus credenciales para acceder al sistema
+          </p>
+        </header>
+
+        <!-- =====================
+             FORMULARIO PRINCIPAL
+             ===================== -->
+        <form class="login-form" action="#" method="post" novalidate>
+
+          <!-- Campo: correo electrónico -->
+          <div class="form-group">
+            <label class="form-label" for="email">Correo electrónico</label>
+            <div class="input-wrapper">
+              <!-- Ícono del campo -->
+              <span class="input-wrapper__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </span>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="admin@medicitas.com"
+                value="admin@medicitas.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Campo: contraseña -->
+          <div class="form-group">
+            <label class="form-label" for="password">Contraseña</label>
+            <div class="input-wrapper">
+              <!-- Ícono del campo -->
+              <span class="input-wrapper__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </span>
+              <input
+                class="form-input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                value="admin123"
+                autocomplete="current-password"
+                required
+              />
+              <!-- Toggle mostrar/ocultar contraseña (visual only) -->
+              <span class="input-wrapper__toggle" aria-label="Mostrar contraseña" role="button" tabindex="0">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Opciones adicionales -->
+          <div class="form-options">
+            <label class="checkbox-label" for="remember">
+              <input type="checkbox" id="remember" name="remember" checked />
+              <span class="checkbox-custom" aria-hidden="true"></span>
+              <span class="checkbox-label__text">Recordarme</span>
+            </label>
+            <a href="#" class="link-forgot">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <!-- Botón de ingreso -->
+            <a class="btn btn--primary btn--full" href="./dashboard.html">Ingresar al sistema
+            <!-- Flecha derecha -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" />
+            </svg>
+            </a>
+        </form>
+
+        <!-- Separador demo -->
+        <div class="divider" style="margin-top: 1.5rem;">acceso rápido</div>
+
+        <!-- Tarjetas de acceso demo -->
+        <div class="demo-access" style="margin-top: 0.75rem;">
+
+          <!-- Demo: Administrador -->
+          <button class="demo-card" type="button" aria-label="Acceso como Administrador">
+            <div class="demo-card__avatar demo-card__avatar--admin" aria-hidden="true">AD</div>
+            <div class="demo-card__info">
+              <span class="demo-card__role">Administrador</span>
+              <span class="demo-card__email">admin@medicitas.com</span>
+            </div>
+          </button>
+
+          <!-- Demo: Médico -->
+          <button class="demo-card" type="button" aria-label="Acceso como Médico">
+            <div class="demo-card__avatar demo-card__avatar--doctor" aria-hidden="true">DR</div>
+            <div class="demo-card__info">
+              <span class="demo-card__role">Médico</span>
+              <span class="demo-card__email">doctor@medicitas.com</span>
+            </div>
+          </button>
+
+        </div>
+
+        <!-- Pie de la tarjeta -->
+        <p class="login-card__footer" style="margin-top: 1.5rem;">
+          ¿No tienes una cuenta?
+          <a href="#">Contacta al administrador</a>
+        </p>
+
+      </div><!-- /.login-card -->
+
+    </section><!-- /.login-panel-right -->
+
+  </main><!-- /.login-page -->
+
+</body>
+</html>

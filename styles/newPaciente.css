@@ -1,0 +1,501 @@
+/* ============================================================
+   SISTEMA DE GESTIÓN DE CITAS MÉDICAS
+   Archivo: dashboard.css
+   ============================================================ */
+
+/* ============================================================
+   1. VARIABLES GLOBALES
+   ============================================================ */
+:root {
+  --color-primary:       #1A6FC4;
+  --color-primary-dark:  #145899;
+  --color-primary-light: #E8F1FB;
+  --color-accent:        #2EAADC;
+
+  --color-white:         #FFFFFF;
+  --color-bg:            #F0F4F9;
+  --color-gray-100:      #F7F9FC;
+  --color-gray-200:      #E8EDF4;
+  --color-gray-400:      #A0AEBF;
+  --color-gray-600:      #6B7A90;
+  --color-gray-800:      #2D3748;
+  --color-text:          #1E2A3B;
+
+  --color-green:         #2F855A;
+  --color-green-light:   #F0FFF4;
+  --color-orange:        #C05621;
+  --color-orange-light:  #FFFAF0;
+  --color-red:           #C53030;
+  --color-red-light:     #FFF5F5;
+
+  --font-main:           'Outfit', 'Segoe UI', sans-serif;
+
+  --sidebar-width:       240px;
+  --header-height:       64px;
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ============================================================
+   2. RESET BÁSICO
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ============================================================
+   3. LAYOUT GENERAL
+   ============================================================ */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout__main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  padding: 28px;
+  flex: 1;
+}
+
+.brand-logo__image{
+  width: 100px;
+}
+/* ============================================================
+   4. SIDEBAR
+   ============================================================ */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--color-white);
+  border-right: 1px solid var(--color-gray-200);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+/* Logo */
+.sidebar__logo {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.sidebar__logo-icon {
+  width: 34px;
+  height: 34px;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar__logo-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-white);
+}
+
+.sidebar__logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Navegación */
+.sidebar__nav {
+  padding: 16px 12px;
+  flex: 1;
+}
+
+.nav-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gray-400);
+  padding: 8px 8px 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-600);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  margin-bottom: 2px;
+}
+
+.nav-item:hover {
+  background: var(--color-gray-100);
+  color: var(--color-text);
+}
+
+.nav-item.active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.nav-item svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+/* Usuario en el fondo del sidebar */
+.sidebar__user {
+  padding: 14px 16px;
+  border-top: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar__user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.sidebar__user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sidebar__user-role {
+  font-size: 11px;
+  color: var(--color-gray-400);
+}
+
+/* ============================================================
+   5. HEADER
+   ============================================================ */
+.header {
+  height: var(--header-height);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.header__subtitle {
+  font-size: 12px;
+  color: var(--color-gray-400);
+  font-weight: 400;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botón notificaciones */
+.header__btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-gray-600);
+  position: relative;
+}
+
+.header__btn svg { width: 17px; height: 17px; }
+
+.header__badge {
+  width: 7px;
+  height: 7px;
+  background: var(--color-red);
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: 1px solid var(--color-white);
+}
+
+/* Fecha */
+.header__date {
+  font-size: 12px;
+  color: var(--color-gray-400);
+}
+
+/* ============================================================
+   6. CARDS DE ESTADÍSTICAS
+   ============================================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stat-card__value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-card__label {
+  font-size: 12px;
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.stat-card__change {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.stat-card__change--up   { color: var(--color-green); }
+.stat-card__change--down { color: var(--color-red); }
+
+.stat-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-card__icon svg { width: 20px; height: 20px; }
+
+.stat-card__icon--blue   { background: var(--color-primary-light); color: var(--color-primary); }
+.stat-card__icon--green  { background: var(--color-green-light);   color: var(--color-green); }
+.stat-card__icon--orange { background: var(--color-orange-light);  color: var(--color-orange); }
+.stat-card__icon--red    { background: var(--color-red-light);     color: var(--color-red); }
+
+/* ============================================================
+   7. TABLA
+   ============================================================ */
+.section-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-200);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.section-card__header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-card__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.section-card__link {
+  font-size: 12px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-gray-400);
+  padding: 10px 20px;
+  text-align: left;
+  background: var(--color-gray-100);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+tbody td {
+  padding: 13px 20px;
+  font-size: 13px;
+  color: var(--color-gray-800);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+tbody tr:hover { background: var(--color-gray-100); }
+
+.td-name { font-weight: 600; color: var(--color-text); }
+.td-sub  { font-size: 11.5px; color: var(--color-gray-400); }
+
+/* ============================================================
+   8. BADGES DE ESTADO
+   ============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.badge--green  { background: var(--color-green-light);  color: var(--color-green); }
+.badge--orange { background: var(--color-orange-light); color: var(--color-orange); }
+.badge--blue   { background: var(--color-primary-light);color: var(--color-primary); }
+.badge--red    { background: var(--color-red-light);    color: var(--color-red); }
+
+/* ============================================================
+   9. GRILLA INFERIOR (tabla + mini panel)
+   ============================================================ */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* Mini panel de citas de hoy */
+.today-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.today-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.today-item:last-child { border-bottom: none; }
+
+.today-item__time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+  width: 42px;
+  flex-shrink: 0;
+}
+
+.today-item__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gray-200);
+  flex-shrink: 0;
+}
+
+.today-item__dot--active { background: var(--color-green); }
+
+.today-item__name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.today-item__spec {
+  font-size: 11px;
+  color: var(--color-gray-400);
+}
+
+/* ============================================================
+   10. RESPONSIVE BÁSICO
+   ============================================================ */
+@media (max-width: 1100px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .bottom-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .layout__main { margin-left: 0; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}

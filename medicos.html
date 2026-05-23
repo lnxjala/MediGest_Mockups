@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- ============================================================
+       SISTEMA DE GESTIÓN DE CITAS MÉDICAS
+       Página: Lista de Médicos
+       Archivo: medicos.html
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Médicos — MediCitas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/dashboard.css" />
+  <link rel="stylesheet" href="./styles/medicos.css" />
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <!-- ========================
+       SIDEBAR
+       ======================== -->
+    <aside class="sidebar">
+
+      <div class="sidebar__logo">
+        <img class="brand-logo__image" src="./assets/logoMediGest-white.png" alt="logo">
+      </div>
+
+      <nav class="sidebar__nav">
+        <p class="nav-section-label">Menú principal</p>
+
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          Dashboard
+        </a>
+
+        <a href="pacientes.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          Pacientes
+        </a>
+
+        <!-- Médicos (activo) -->
+        <a href="medicos.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          Médicos
+        </a>
+
+        <a href="citas.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>
+          Citas
+        </a>
+
+        <a href="historial.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14,2 14,8 20,8" />
+            <line x1="8" y1="13" x2="16" y2="13" />
+            <line x1="8" y1="17" x2="16" y2="17" />
+          </svg>
+          Historial
+        </a>
+
+        <a href="reportes.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" />
+          </svg>
+          Reportes
+        </a>
+      </nav>
+
+      <div class="sidebar__user">
+        <div class="sidebar__user-avatar">AL</div>
+        <div>
+          <div class="sidebar__user-name">Ana López</div>
+          <div class="sidebar__user-role">Administradora</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ========================
+       CONTENIDO PRINCIPAL
+       ======================== -->
+    <div class="layout__main">
+
+      <!-- Header -->
+      <header class="header">
+        <div>
+          <div class="header__title">Médicos</div>
+          <div class="header__subtitle">Gestión del personal médico</div>
+        </div>
+        <div class="header__right">
+          <span class="header__date">Lunes, 2 de diciembre 2024</span>
+          <button class="header__btn" type="button" aria-label="Notificaciones">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+            <span class="header__badge"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Contenido -->
+      <main class="page-content">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+          <a href="dashboard.html">Dashboard</a>
+          <span class="breadcrumb__sep">›</span>
+          <span>Médicos</span>
+        </nav>
+
+        <!-- Quick stats -->
+        <div class="quick-stats">
+
+          <div class="quick-stat">
+            <div class="quick-stat__icon quick-stat__icon--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div>
+              <div class="quick-stat__value">38</div>
+              <div class="quick-stat__label">Total médicos</div>
+            </div>
+          </div>
+
+          <div class="quick-stat">
+            <div class="quick-stat__icon quick-stat__icon--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20,6 9,17 4,12" />
+              </svg>
+            </div>
+            <div>
+              <div class="quick-stat__value">32</div>
+              <div class="quick-stat__label">Activos hoy</div>
+            </div>
+          </div>
+
+          <div class="quick-stat">
+            <div class="quick-stat__icon quick-stat__icon--orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+            </div>
+            <div>
+              <div class="quick-stat__value">124</div>
+              <div class="quick-stat__label">Citas esta semana</div>
+            </div>
+          </div>
+
+          <div class="quick-stat">
+            <div class="quick-stat__icon quick-stat__icon--red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12,6 12,12 16,14" />
+              </svg>
+            </div>
+            <div>
+              <div class="quick-stat__value">4</div>
+              <div class="quick-stat__label">De vacaciones</div>
+            </div>
+          </div>
+
+          <div class="quick-stat">
+            <div class="quick-stat__icon quick-stat__icon--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <div>
+              <div class="quick-stat__value">12</div>
+              <div class="quick-stat__label">Especialidades</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Toolbar -->
+        <div class="page-toolbar">
+          <div class="page-toolbar__left">
+            <div class="search-box">
+              <span class="search-box__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </span>
+              <input class="search-box__input" type="text" placeholder="Buscar médico..." />
+            </div>
+            <select class="filter-select">
+              <option value="">Todas las especialidades</option>
+              <option>Cardiología</option>
+              <option>Pediatría</option>
+              <option>Traumatología</option>
+              <option>Dermatología</option>
+              <option>Neurología</option>
+              <option>Ginecología</option>
+              <option>Oftalmología</option>
+            </select>
+            <select class="filter-select">
+              <option value="">Todos los estados</option>
+              <option>Activo</option>
+              <option>De vacaciones</option>
+              <option>Inactivo</option>
+            </select>
+          </div>
+          <div class="page-toolbar__right">
+            <button class="btn btn--ghost" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7,10 12,15 17,10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Exportar
+            </button>
+            <a href="nuevo-medico.html" class="btn btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              Nuevo médico
+            </a>
+          </div>
+        </div>
+
+        <!-- ========================
+           GRID DE CARDS
+           ======================== -->
+        <div class="doctors-grid">
+
+          <!-- ---- CARD 1: Dr. Rodríguez ---- -->
+          <div class="doctor-card">
+            <div class="doctor-card__banner doctor-card__banner--blue">
+              <span class="doctor-card__status doctor-card__status--active">Activo</span>
+              <div class="doctor-card__avatar-wrap">
+                <div class="doctor-card__avatar" style="background: #1A6FC4;">RO</div>
+              </div>
+            </div>
+            <div class="doctor-card__body">
+              <div class="doctor-card__head">
+                <div>
+                  <div class="doctor-card__name">Dr. Alejandro Rodríguez</div>
+                  <div class="doctor-card__specialty">Cardiología</div>
+                  <div class="doctor-card__code">#MED-0001 · CMP 45231</div>
+                </div>
+                <button class="doctor-card__menu-btn" type="button" aria-label="Opciones">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="5" r="1" />
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="12" cy="19" r="1" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="doctor-card__contact">
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  a.rodriguez@medicitas.com
+                </div>
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <line x1="12" y1="18" x2="12" y2="18" />
+                  </svg>
+                  +51 987 654 001
+                </div>
+              </div>
+
+              <div class="doctor-card__divider"></div>
+
+              <div class="doctor-card__stats">
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">248</div>
+                  <div class="doctor-stat__label">Pacientes</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">18</div>
+                  <div class="doctor-stat__label">Citas hoy</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">97%</div>
+                  <div class="doctor-stat__label">Asistencia</div>
+                </div>
+              </div>
+
+              <div class="doctor-card__schedule">
+                <div class="doctor-card__schedule-title">Horario semanal</div>
+                <div class="schedule-days">
+                  <span class="schedule-day schedule-day--on">Lun</span>
+                  <span class="schedule-day schedule-day--on">Mar</span>
+                  <span class="schedule-day schedule-day--on">Mié</span>
+                  <span class="schedule-day schedule-day--off">Jue</span>
+                  <span class="schedule-day schedule-day--on">Vie</span>
+                  <span class="schedule-day schedule-day--off">Sáb</span>
+                  <span class="schedule-day schedule-day--off">Dom</span>
+                </div>
+                <div class="doctor-card__schedule-hours">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                  08:00 – 14:00 hrs
+                </div>
+              </div>
+
+              <div class="doctor-card__footer">
+                <button class="btn btn--ghost" type="button">Ver perfil</button>
+                <button class="btn btn--primary" type="button">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- CARD 2: Dra. Torres ---- -->
+          <div class="doctor-card">
+            <div class="doctor-card__banner doctor-card__banner--teal">
+              <span class="doctor-card__status doctor-card__status--active">Activo</span>
+              <div class="doctor-card__avatar-wrap">
+                <div class="doctor-card__avatar" style="background: #0f766e;">TO</div>
+              </div>
+            </div>
+            <div class="doctor-card__body">
+              <div class="doctor-card__head">
+                <div>
+                  <div class="doctor-card__name">Dra. Lucía Torres</div>
+                  <div class="doctor-card__specialty">Pediatría</div>
+                  <div class="doctor-card__code">#MED-0002 · CMP 38714</div>
+                </div>
+                <button class="doctor-card__menu-btn" type="button" aria-label="Opciones">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="5" r="1" />
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="12" cy="19" r="1" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="doctor-card__contact">
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  l.torres@medicitas.com
+                </div>
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <line x1="12" y1="18" x2="12" y2="18" />
+                  </svg>
+                  +51 987 654 002
+                </div>
+              </div>
+
+              <div class="doctor-card__divider"></div>
+
+              <div class="doctor-card__stats">
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">312</div>
+                  <div class="doctor-stat__label">Pacientes</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">22</div>
+                  <div class="doctor-stat__label">Citas hoy</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">99%</div>
+                  <div class="doctor-stat__label">Asistencia</div>
+                </div>
+              </div>
+
+              <div class="doctor-card__schedule">
+                <div class="doctor-card__schedule-title">Horario semanal</div>
+                <div class="schedule-days">
+                  <span class="schedule-day schedule-day--on">Lun</span>
+                  <span class="schedule-day schedule-day--off">Mar</span>
+                  <span class="schedule-day schedule-day--on">Mié</span>
+                  <span class="schedule-day schedule-day--on">Jue</span>
+                  <span class="schedule-day schedule-day--on">Vie</span>
+                  <span class="schedule-day schedule-day--on">Sáb</span>
+                  <span class="schedule-day schedule-day--off">Dom</span>
+                </div>
+                <div class="doctor-card__schedule-hours">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                  09:00 – 16:00 hrs
+                </div>
+              </div>
+
+              <div class="doctor-card__footer">
+                <button class="btn btn--ghost" type="button">Ver perfil</button>
+                <button class="btn btn--primary" type="button">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- CARD 3: Dr. Gómez ---- -->
+          <div class="doctor-card">
+            <div class="doctor-card__banner doctor-card__banner--violet">
+              <span class="doctor-card__status doctor-card__status--active">Activo</span>
+              <div class="doctor-card__avatar-wrap">
+                <div class="doctor-card__avatar" style="background: #7c3aed;">GO</div>
+              </div>
+            </div>
+            <div class="doctor-card__body">
+              <div class="doctor-card__head">
+                <div>
+                  <div class="doctor-card__name">Dr. Marco Gómez</div>
+                  <div class="doctor-card__specialty">Traumatología</div>
+                  <div class="doctor-card__code">#MED-0003 · CMP 51092</div>
+                </div>
+                <button class="doctor-card__menu-btn" type="button" aria-label="Opciones">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="5" r="1" />
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="12" cy="19" r="1" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="doctor-card__contact">
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  m.gomez@medicitas.com
+                </div>
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <line x1="12" y1="18" x2="12" y2="18" />
+                  </svg>
+                  +51 987 654 003
+                </div>
+              </div>
+
+              <div class="doctor-card__divider"></div>
+
+              <div class="doctor-card__stats">
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">175</div>
+                  <div class="doctor-stat__label">Pacientes</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">14</div>
+                  <div class="doctor-stat__label">Citas hoy</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">94%</div>
+                  <div class="doctor-stat__label">Asistencia</div>
+                </div>
+              </div>
+
+              <div class="doctor-card__schedule">
+                <div class="doctor-card__schedule-title">Horario semanal</div>
+                <div class="schedule-days">
+                  <span class="schedule-day schedule-day--off">Lun</span>
+                  <span class="schedule-day schedule-day--on">Mar</span>
+                  <span class="schedule-day schedule-day--on">Mié</span>
+                  <span class="schedule-day schedule-day--on">Jue</span>
+                  <span class="schedule-day schedule-day--off">Vie</span>
+                  <span class="schedule-day schedule-day--on">Sáb</span>
+                  <span class="schedule-day schedule-day--off">Dom</span>
+                </div>
+                <div class="doctor-card__schedule-hours">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                  10:00 – 18:00 hrs
+                </div>
+              </div>
+
+              <div class="doctor-card__footer">
+                <button class="btn btn--ghost" type="button">Ver perfil</button>
+                <button class="btn btn--primary" type="button">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- CARD 4: Dr. Vargas ---- -->
+          <div class="doctor-card">
+            <div class="doctor-card__banner doctor-card__banner--amber">
+              <span class="doctor-card__status doctor-card__status--vacation">Vacaciones</span>
+              <div class="doctor-card__avatar-wrap">
+                <div class="doctor-card__avatar" style="background: #b45309;">VA</div>
+              </div>
+            </div>
+            <div class="doctor-card__body">
+              <div class="doctor-card__head">
+                <div>
+                  <div class="doctor-card__name">Dr. Sergio Vargas</div>
+                  <div class="doctor-card__specialty">Dermatología</div>
+                  <div class="doctor-card__code">#MED-0004 · CMP 29874</div>
+                </div>
+                <button class="doctor-card__menu-btn" type="button" aria-label="Opciones">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="5" r="1" />
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="12" cy="19" r="1" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="doctor-card__contact">
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  s.vargas@medicitas.com
+                </div>
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <line x1="12" y1="18" x2="12" y2="18" />
+                  </svg>
+                  +51 987 654 004
+                </div>
+              </div>
+
+              <div class="doctor-card__divider"></div>
+
+              <div class="doctor-card__stats">
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">203</div>
+                  <div class="doctor-stat__label">Pacientes</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">0</div>
+                  <div class="doctor-stat__label">Citas hoy</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">91%</div>
+                  <div class="doctor-stat__label">Asistencia</div>
+                </div>
+              </div>
+
+              <div class="doctor-card__schedule">
+                <div class="doctor-card__schedule-title">Horario semanal</div>
+                <div class="schedule-days">
+                  <span class="schedule-day schedule-day--off">Lun</span>
+                  <span class="schedule-day schedule-day--off">Mar</span>
+                  <span class="schedule-day schedule-day--off">Mié</span>
+                  <span class="schedule-day schedule-day--off">Jue</span>
+                  <span class="schedule-day schedule-day--off">Vie</span>
+                  <span class="schedule-day schedule-day--off">Sáb</span>
+                  <span class="schedule-day schedule-day--off">Dom</span>
+                </div>
+                <div class="doctor-card__schedule-hours">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                  Regresa: 09/12/2024
+                </div>
+              </div>
+
+              <div class="doctor-card__footer">
+                <button class="btn btn--ghost" type="button">Ver perfil</button>
+                <button class="btn btn--ghost" type="button" disabled style="opacity:0.45;cursor:not-allowed;">Sin
+                  disponibilidad</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- CARD 5: Dra. Núñez ---- -->
+          <div class="doctor-card">
+            <div class="doctor-card__banner doctor-card__banner--rose">
+              <span class="doctor-card__status doctor-card__status--active">Activo</span>
+              <div class="doctor-card__avatar-wrap">
+                <div class="doctor-card__avatar" style="background: #e11d48;">NU</div>
+              </div>
+            </div>
+            <div class="doctor-card__body">
+              <div class="doctor-card__head">
+                <div>
+                  <div class="doctor-card__name">Dra. Patricia Núñez</div>
+                  <div class="doctor-card__specialty">Neurología</div>
+                  <div class="doctor-card__code">#MED-0005 · CMP 63201</div>
+                </div>
+                <button class="doctor-card__menu-btn" type="button" aria-label="Opciones">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="5" r="1" />
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="12" cy="19" r="1" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="doctor-card__contact">
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  p.nunez@medicitas.com
+                </div>
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <line x1="12" y1="18" x2="12" y2="18" />
+                  </svg>
+                  +51 987 654 005
+                </div>
+              </div>
+
+              <div class="doctor-card__divider"></div>
+
+              <div class="doctor-card__stats">
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">189</div>
+                  <div class="doctor-stat__label">Pacientes</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">12</div>
+                  <div class="doctor-stat__label">Citas hoy</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">96%</div>
+                  <div class="doctor-stat__label">Asistencia</div>
+                </div>
+              </div>
+
+              <div class="doctor-card__schedule">
+                <div class="doctor-card__schedule-title">Horario semanal</div>
+                <div class="schedule-days">
+                  <span class="schedule-day schedule-day--on">Lun</span>
+                  <span class="schedule-day schedule-day--on">Mar</span>
+                  <span class="schedule-day schedule-day--off">Mié</span>
+                  <span class="schedule-day schedule-day--on">Jue</span>
+                  <span class="schedule-day schedule-day--on">Vie</span>
+                  <span class="schedule-day schedule-day--off">Sáb</span>
+                  <span class="schedule-day schedule-day--off">Dom</span>
+                </div>
+                <div class="doctor-card__schedule-hours">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                  07:30 – 13:30 hrs
+                </div>
+              </div>
+
+              <div class="doctor-card__footer">
+                <button class="btn btn--ghost" type="button">Ver perfil</button>
+                <button class="btn btn--primary" type="button">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- CARD 6: Dr. Castillo ---- -->
+          <div class="doctor-card">
+            <div class="doctor-card__banner doctor-card__banner--green">
+              <span class="doctor-card__status doctor-card__status--active">Activo</span>
+              <div class="doctor-card__avatar-wrap">
+                <div class="doctor-card__avatar" style="background: #2F855A;">CA</div>
+              </div>
+            </div>
+            <div class="doctor-card__body">
+              <div class="doctor-card__head">
+                <div>
+                  <div class="doctor-card__name">Dr. Raúl Castillo</div>
+                  <div class="doctor-card__specialty">Ginecología</div>
+                  <div class="doctor-card__code">#MED-0006 · CMP 44587</div>
+                </div>
+                <button class="doctor-card__menu-btn" type="button" aria-label="Opciones">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="5" r="1" />
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="12" cy="19" r="1" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="doctor-card__contact">
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  r.castillo@medicitas.com
+                </div>
+                <div class="doctor-card__contact-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <line x1="12" y1="18" x2="12" y2="18" />
+                  </svg>
+                  +51 987 654 006
+                </div>
+              </div>
+
+              <div class="doctor-card__divider"></div>
+
+              <div class="doctor-card__stats">
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">267</div>
+                  <div class="doctor-stat__label">Pacientes</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">16</div>
+                  <div class="doctor-stat__label">Citas hoy</div>
+                </div>
+                <div class="doctor-stat">
+                  <div class="doctor-stat__value">98%</div>
+                  <div class="doctor-stat__label">Asistencia</div>
+                </div>
+              </div>
+
+              <div class="doctor-card__schedule">
+                <div class="doctor-card__schedule-title">Horario semanal</div>
+                <div class="schedule-days">
+                  <span class="schedule-day schedule-day--on">Lun</span>
+                  <span class="schedule-day schedule-day--on">Mar</span>
+                  <span class="schedule-day schedule-day--on">Mié</span>
+                  <span class="schedule-day schedule-day--on">Jue</span>
+                  <span class="schedule-day schedule-day--on">Vie</span>
+                  <span class="schedule-day schedule-day--off">Sáb</span>
+                  <span class="schedule-day schedule-day--off">Dom</span>
+                </div>
+                <div class="doctor-card__schedule-hours">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                  08:00 – 15:00 hrs
+                </div>
+              </div>
+
+              <div class="doctor-card__footer">
+                <button class="btn btn--ghost" type="button">Ver perfil</button>
+                <button class="btn btn--primary" type="button">Agendar cita</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.doctors-grid -->
+
+        <!-- Paginación -->
+        <div class="pagination">
+          <span class="pagination__info">Mostrando 6 de 38 médicos</span>
+          <div class="pagination__controls">
+            <button class="page-btn" type="button" aria-label="Anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="15,18 9,12 15,6" />
+              </svg>
+            </button>
+            <button class="page-btn active" type="button">1</button>
+            <button class="page-btn" type="button">2</button>
+            <button class="page-btn" type="button">3</button>
+            <span style="padding: 0 4px; color: var(--color-gray-400); font-size:13px;">…</span>
+            <button class="page-btn" type="button">7</button>
+            <button class="page-btn" type="button" aria-label="Siguiente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="9,18 15,12 9,6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </main>
+
+    </div><!-- /.layout__main -->
+
+  </div><!-- /.layout -->
+
+</body>
+
+</html>
