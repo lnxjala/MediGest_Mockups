@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <!-- ============================================================
        SISTEMA DE GESTIÓN DE CITAS MÉDICAS
@@ -14,574 +15,600 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/pacientes.css" />
 </head>
+
 <body>
 
-<div class="layout">
+  <div class="layout">
 
-  <!-- ========================
+    <!-- ========================
        SIDEBAR
        ======================== -->
-  <aside class="sidebar">
+    <aside class="sidebar">
 
-    <div class="sidebar__logo">
+      <div class="sidebar__logo">
+        <a href="./index.html">
           <img class="brand-logo__image" src="./assets/logoMediGest-white.png" alt="logo">
-    </div>
-
-    <nav class="sidebar__nav">
-
-      <p class="nav-section-label">Menú principal</p>
-
-      <a href="dashboard.html" class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
-          <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
-        </svg>
-        Dashboard
-      </a>
-
-      <!-- Activo -->
-      <a href="pacientes.html" class="nav-item active">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-          <circle cx="9" cy="7" r="4"/>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-        </svg>
-        Pacientes
-      </a>
-
-      <a href="medicos.html" class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/>
-          <circle cx="12" cy="12" r="4"/>
-        </svg>
-        Médicos
-      </a>
-
-      <a href="citas.html" class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2"/>
-          <path d="M16 2v4M8 2v4M3 10h18"/>
-        </svg>
-        Citas
-      </a>
-
-      <a href="historial.html" class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14,2 14,8 20,8"/>
-          <line x1="8" y1="13" x2="16" y2="13"/>
-          <line x1="8" y1="17" x2="16" y2="17"/>
-        </svg>
-        Historial
-      </a>
-
-      <a href="reportes.html" class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-        </svg>
-        Reportes
-      </a>
-
-    </nav>
-
-    <div class="sidebar__user">
-      <div class="sidebar__user-avatar">AL</div>
-      <div>
-        <div class="sidebar__user-name">Ana López</div>
-        <div class="sidebar__user-role">Administradora</div>
-      </div>
-    </div>
-
-  </aside>
-
-  <!-- ========================
-       CONTENIDO PRINCIPAL
-       ======================== -->
-  <div class="layout__main">
-
-    <!-- Header -->
-    <header class="header">
-      <div>
-        <div class="header__title">Pacientes</div>
-        <div class="header__subtitle">1,284 pacientes registrados</div>
-      </div>
-      <div class="header__right">
-        <a class="btn-primary" href="./new-paciente.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-               stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-          </svg>
-          Nuevo paciente
         </a>
       </div>
-    </header>
 
-    <!-- Contenido -->
-    <main class="page-content">
+      <nav class="sidebar__nav">
 
-      <!-- Barra de búsqueda y filtros -->
-      <div class="toolbar">
+        <p class="nav-section-label">Menú principal</p>
 
-        <div class="search-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
           </svg>
-          <input type="text" placeholder="Buscar por nombre, DNI o código..." />
+          Dashboard
+        </a>
+
+        <!-- Activo -->
+        <a href="pacientes.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          Pacientes
+        </a>
+
+        <a href="medicos.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          Médicos
+        </a>
+
+        <a href="citas.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>
+          Citas
+        </a>
+
+        <a href="historial.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14,2 14,8 20,8" />
+            <line x1="8" y1="13" x2="16" y2="13" />
+            <line x1="8" y1="17" x2="16" y2="17" />
+          </svg>
+          Historial
+        </a>
+
+        <a href="reportes.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" />
+          </svg>
+          Reportes
+        </a>
+
+      </nav>
+
+      <div class="sidebar__user">
+        <div class="sidebar__user-avatar">AL</div>
+        <div>
+          <div class="sidebar__user-name">Ana López</div>
+          <div class="sidebar__user-role">Administradora</div>
         </div>
-
-        <select class="filter-select">
-          <option>Todos los estados</option>
-          <option>Activo</option>
-          <option>En tratamiento</option>
-          <option>Alta médica</option>
-        </select>
-
-        <select class="filter-select">
-          <option>Todas las edades</option>
-          <option>0 – 18 años</option>
-          <option>19 – 40 años</option>
-          <option>41 – 60 años</option>
-          <option>60+ años</option>
-        </select>
-
-        <span class="toolbar__count">Mostrando 9 de 1,284</span>
-
       </div>
 
-      <!-- Grid de tarjetas -->
-      <div class="patients-grid">
+    </aside>
 
-        <!-- Paciente 1 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--blue">CM</div>
-            <div>
-              <div class="patient-card__name">Carlos Mendoza</div>
-              <div class="patient-card__id">#PAC-0041</div>
-            </div>
-            <div class="patient-card__status">
-              <span class="badge badge--green">Activo</span>
-            </div>
+    <!-- ========================
+       CONTENIDO PRINCIPAL
+       ======================== -->
+    <div class="layout__main">
+
+      <!-- Header -->
+      <header class="header">
+        <div>
+          <div class="header__title">Pacientes</div>
+          <div class="header__subtitle">1,284 pacientes registrados</div>
+        </div>
+        <div class="header__right">
+          <a class="btn-primary" href="./new-paciente.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            Nuevo paciente
+          </a>
+        </div>
+      </header>
+
+      <!-- Contenido -->
+      <main class="page-content">
+
+        <!-- Barra de búsqueda y filtros -->
+        <div class="toolbar">
+
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" placeholder="Buscar por nombre, DNI o código..." />
           </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>42 años</strong> · Masculino</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 987 654 321</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>02/12/2024</strong></span>
-            </div>
-          </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
-          </div>
+
+          <select class="filter-select">
+            <option>Todos los estados</option>
+            <option>Activo</option>
+            <option>En tratamiento</option>
+            <option>Alta médica</option>
+          </select>
+
+          <select class="filter-select">
+            <option>Todas las edades</option>
+            <option>0 – 18 años</option>
+            <option>19 – 40 años</option>
+            <option>41 – 60 años</option>
+            <option>60+ años</option>
+          </select>
+
+          <span class="toolbar__count">Mostrando 9 de 1,284</span>
+
         </div>
 
-        <!-- Paciente 2 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--rose">MF</div>
-            <div>
-              <div class="patient-card__name">María Fernández</div>
-              <div class="patient-card__id">#PAC-0087</div>
+        <!-- Grid de tarjetas -->
+        <div class="patients-grid">
+
+          <!-- Paciente 1 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--blue">CM</div>
+              <div>
+                <div class="patient-card__name">Carlos Mendoza</div>
+                <div class="patient-card__id">#PAC-0041</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--green">Activo</span>
+              </div>
             </div>
-            <div class="patient-card__status">
-              <span class="badge badge--orange">Tratamiento</span>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>42 años</strong> · Masculino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 987 654 321</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>02/12/2024</strong></span>
+              </div>
+            </div>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
             </div>
           </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>8 años</strong> · Femenino</span>
+
+          <!-- Paciente 2 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--rose">MF</div>
+              <div>
+                <div class="patient-card__name">María Fernández</div>
+                <div class="patient-card__id">#PAC-0087</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--orange">Tratamiento</span>
+              </div>
             </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 965 321 789</span>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>8 años</strong> · Femenino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 965 321 789</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>02/12/2024</strong></span>
+              </div>
             </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>02/12/2024</strong></span>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
             </div>
           </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
+
+          <!-- Paciente 3 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--teal">LH</div>
+              <div>
+                <div class="patient-card__name">Luis Herrera</div>
+                <div class="patient-card__id">#PAC-0123</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--green">Activo</span>
+              </div>
+            </div>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>35 años</strong> · Masculino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 912 456 098</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>28/11/2024</strong></span>
+              </div>
+            </div>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
+            </div>
           </div>
+
+          <!-- Paciente 4 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--purple">AC</div>
+              <div>
+                <div class="patient-card__name">Ana Castillo</div>
+                <div class="patient-card__id">#PAC-0055</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--blue">Alta médica</span>
+              </div>
+            </div>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>29 años</strong> · Femenino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 934 870 215</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>15/11/2024</strong></span>
+              </div>
+            </div>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
+            </div>
+          </div>
+
+          <!-- Paciente 5 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--green">JR</div>
+              <div>
+                <div class="patient-card__name">Jorge Ramírez</div>
+                <div class="patient-card__id">#PAC-0210</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--orange">Tratamiento</span>
+              </div>
+            </div>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>55 años</strong> · Masculino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 956 102 478</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>01/12/2024</strong></span>
+              </div>
+            </div>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
+            </div>
+          </div>
+
+          <!-- Paciente 6 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--blue">SV</div>
+              <div>
+                <div class="patient-card__name">Sofía Vargas</div>
+                <div class="patient-card__id">#PAC-0302</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--green">Activo</span>
+              </div>
+            </div>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>31 años</strong> · Femenino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 943 217 605</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>30/11/2024</strong></span>
+              </div>
+            </div>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
+            </div>
+          </div>
+
+          <!-- Paciente 7 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--teal">RP</div>
+              <div>
+                <div class="patient-card__name">Roberto Paredes</div>
+                <div class="patient-card__id">#PAC-0389</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--green">Activo</span>
+              </div>
+            </div>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>67 años</strong> · Masculino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 978 334 561</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>25/11/2024</strong></span>
+              </div>
+            </div>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
+            </div>
+          </div>
+
+          <!-- Paciente 8 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--purple">LC</div>
+              <div>
+                <div class="patient-card__name">Laura Chávez</div>
+                <div class="patient-card__id">#PAC-0417</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--orange">Tratamiento</span>
+              </div>
+            </div>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>47 años</strong> · Femenino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 921 087 345</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>02/12/2024</strong></span>
+              </div>
+            </div>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
+            </div>
+          </div>
+
+          <!-- Paciente 9 -->
+          <div class="patient-card">
+            <div class="patient-card__header">
+              <div class="patient-avatar patient-avatar--rose">DM</div>
+              <div>
+                <div class="patient-card__name">Diego Morales</div>
+                <div class="patient-card__id">#PAC-0498</div>
+              </div>
+              <div class="patient-card__status">
+                <span class="badge badge--blue">Alta médica</span>
+              </div>
+            </div>
+            <div class="patient-card__divider"></div>
+            <div class="patient-card__info">
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                <span><strong>23 años</strong> · Masculino</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+51 904 762 118</span>
+              </div>
+              <div class="patient-info-row">
+                <svg viewBox="0 0 24 eal" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                <span>Última cita: <strong>18/11/2024</strong></span>
+              </div>
+            </div>
+            <div class="patient-card__actions">
+              <button class="btn-action" type="button">Ver perfil</button>
+              <button class="btn-action" type="button">Editar</button>
+              <button class="btn-action btn-action--danger" type="button">Eliminar</button>
+            </div>
+          </div>
+
+        </div><!-- /.patients-grid -->
+
+        <!-- Paginación -->
+        <div class="pagination">
+          <button class="page-btn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="15,18 9,12 15,6" />
+            </svg>
+          </button>
+          <button class="page-btn active" type="button">1</button>
+          <button class="page-btn" type="button">2</button>
+          <button class="page-btn" type="button">3</button>
+          <span style="color:var(--color-gray-400); font-size:13px;">...</span>
+          <button class="page-btn" type="button">143</button>
+          <button class="page-btn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6" />
+            </svg>
+          </button>
         </div>
 
-        <!-- Paciente 3 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--teal">LH</div>
-            <div>
-              <div class="patient-card__name">Luis Herrera</div>
-              <div class="patient-card__id">#PAC-0123</div>
-            </div>
-            <div class="patient-card__status">
-              <span class="badge badge--green">Activo</span>
-            </div>
-          </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>35 años</strong> · Masculino</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 912 456 098</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>28/11/2024</strong></span>
-            </div>
-          </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
-          </div>
-        </div>
+      </main>
 
-        <!-- Paciente 4 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--purple">AC</div>
-            <div>
-              <div class="patient-card__name">Ana Castillo</div>
-              <div class="patient-card__id">#PAC-0055</div>
-            </div>
-            <div class="patient-card__status">
-              <span class="badge badge--blue">Alta médica</span>
-            </div>
-          </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>29 años</strong> · Femenino</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 934 870 215</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>15/11/2024</strong></span>
-            </div>
-          </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
-          </div>
-        </div>
+    </div><!-- /.layout__main -->
 
-        <!-- Paciente 5 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--green">JR</div>
-            <div>
-              <div class="patient-card__name">Jorge Ramírez</div>
-              <div class="patient-card__id">#PAC-0210</div>
-            </div>
-            <div class="patient-card__status">
-              <span class="badge badge--orange">Tratamiento</span>
-            </div>
-          </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>55 años</strong> · Masculino</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 956 102 478</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>01/12/2024</strong></span>
-            </div>
-          </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
-          </div>
-        </div>
-
-        <!-- Paciente 6 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--blue">SV</div>
-            <div>
-              <div class="patient-card__name">Sofía Vargas</div>
-              <div class="patient-card__id">#PAC-0302</div>
-            </div>
-            <div class="patient-card__status">
-              <span class="badge badge--green">Activo</span>
-            </div>
-          </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>31 años</strong> · Femenino</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 943 217 605</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>30/11/2024</strong></span>
-            </div>
-          </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
-          </div>
-        </div>
-
-        <!-- Paciente 7 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--teal">RP</div>
-            <div>
-              <div class="patient-card__name">Roberto Paredes</div>
-              <div class="patient-card__id">#PAC-0389</div>
-            </div>
-            <div class="patient-card__status">
-              <span class="badge badge--green">Activo</span>
-            </div>
-          </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>67 años</strong> · Masculino</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 978 334 561</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>25/11/2024</strong></span>
-            </div>
-          </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
-          </div>
-        </div>
-
-        <!-- Paciente 8 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--purple">LC</div>
-            <div>
-              <div class="patient-card__name">Laura Chávez</div>
-              <div class="patient-card__id">#PAC-0417</div>
-            </div>
-            <div class="patient-card__status">
-              <span class="badge badge--orange">Tratamiento</span>
-            </div>
-          </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>47 años</strong> · Femenino</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 921 087 345</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>02/12/2024</strong></span>
-            </div>
-          </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
-          </div>
-        </div>
-
-        <!-- Paciente 9 -->
-        <div class="patient-card">
-          <div class="patient-card__header">
-            <div class="patient-avatar patient-avatar--rose">DM</div>
-            <div>
-              <div class="patient-card__name">Diego Morales</div>
-              <div class="patient-card__id">#PAC-0498</div>
-            </div>
-            <div class="patient-card__status">
-              <span class="badge badge--blue">Alta médica</span>
-            </div>
-          </div>
-          <div class="patient-card__divider"></div>
-          <div class="patient-card__info">
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-              <span><strong>23 años</strong> · Masculino</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span>+51 904 762 118</span>
-            </div>
-            <div class="patient-info-row">
-              <svg viewBox="0 0 24 eal" fill="none" stroke="currentColor" stroke-width="2"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              <span>Última cita: <strong>18/11/2024</strong></span>
-            </div>
-          </div>
-          <div class="patient-card__actions">
-            <button class="btn-action" type="button">Ver perfil</button>
-            <button class="btn-action" type="button">Editar</button>
-            <button class="btn-action btn-action--danger" type="button">Eliminar</button>
-          </div>
-        </div>
-
-      </div><!-- /.patients-grid -->
-
-      <!-- Paginación -->
-      <div class="pagination">
-        <button class="page-btn" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15,18 9,12 15,6"/>
-          </svg>
-        </button>
-        <button class="page-btn active" type="button">1</button>
-        <button class="page-btn" type="button">2</button>
-        <button class="page-btn" type="button">3</button>
-        <span style="color:var(--color-gray-400); font-size:13px;">...</span>
-        <button class="page-btn" type="button">143</button>
-        <button class="page-btn" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9,18 15,12 9,6"/>
-          </svg>
-        </button>
-      </div>
-
-    </main>
-
-  </div><!-- /.layout__main -->
-
-</div><!-- /.layout -->
+  </div><!-- /.layout -->
 
 </body>
+
 </html>

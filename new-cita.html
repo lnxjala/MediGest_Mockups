@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============================================================
+       SISTEMA DE GESTIÓN DE CITAS MÉDICAS
+       Página: Nueva Cita
+       Archivo: nueva-cita.html
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nueva Cita — MediCitas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/newCita.css" />
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ========================
+       SIDEBAR
+       ======================== -->
+  <aside class="sidebar">
+
+    <div class="sidebar__logo">
+        <a href="./index.html">
+          <img class="brand-logo__image" src="./assets/logoMediGest-white.png" alt="logo">
+        </a> 
+      </div>
+
+    <nav class="sidebar__nav">
+      <p class="nav-section-label">Menú principal</p>
+
+      <a href="dashboard.html" class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+        Dashboard
+      </a>
+
+      <a href="pacientes.html" class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        Pacientes
+      </a>
+
+      <a href="medicos.html" class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/>
+          <circle cx="12" cy="12" r="4"/>
+        </svg>
+        Médicos
+      </a>
+
+      <!-- Activo (venimos de citas) -->
+      <a href="citas.html" class="nav-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <path d="M16 2v4M8 2v4M3 10h18"/>
+        </svg>
+        Citas
+      </a>
+
+      <a href="historial.html" class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14,2 14,8 20,8"/>
+          <line x1="8" y1="13" x2="16" y2="13"/>
+          <line x1="8" y1="17" x2="16" y2="17"/>
+        </svg>
+        Historial
+      </a>
+
+      <a href="reportes.html" class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+        </svg>
+        Reportes
+      </a>
+
+    </nav>
+
+    <div class="sidebar__user">
+      <div class="sidebar__user-avatar">AL</div>
+      <div>
+        <div class="sidebar__user-name">Ana López</div>
+        <div class="sidebar__user-role">Administradora</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ========================
+       CONTENIDO PRINCIPAL
+       ======================== -->
+  <div class="layout__main">
+
+    <!-- Header con botón volver -->
+    <header class="header">
+      <div class="header__left">
+        <a href="citas.html" class="header__back" title="Volver a citas">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15,18 9,12 15,6"/>
+          </svg>
+        </a>
+        <div>
+          <div class="header__title">Nueva cita</div>
+          <div class="header__subtitle">Citas / Nueva cita</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-content">
+
+      <div class="form-layout">
+
+        <!-- ========================
+             COLUMNA IZQUIERDA
+             ======================== -->
+        <div>
+
+          <!-- Sección 1: Paciente -->
+          <div class="form-card">
+            <div class="form-card__header">
+              <div class="form-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                </svg>
+              </div>
+              <div>
+                <div class="form-card__title">Paciente</div>
+              </div>
+            </div>
+            <div class="form-card__body">
+              <div class="fields-grid">
+
+                <div class="field field--full">
+                  <label class="field__label">Buscar paciente <span>*</span></label>
+                  <input class="field__input" type="text"
+                         placeholder="Nombre, DNI o código del paciente..."
+                         value="Carlos Mendoza" />
+                  <span class="field__hint">Escribe al menos 3 caracteres para buscar</span>
+                </div>
+
+                <div class="field">
+                  <label class="field__label">DNI / Documento</label>
+                  <input class="field__input" type="text"
+                         placeholder="12345678" value="45678901" />
+                </div>
+
+                <div class="field">
+                  <label class="field__label">Teléfono de contacto</label>
+                  <input class="field__input" type="text"
+                         placeholder="+51 000 000 000" value="+51 987 654 321" />
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Sección 2: Médico y especialidad -->
+          <div class="form-card">
+            <div class="form-card__header">
+              <div class="form-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/>
+                  <circle cx="12" cy="12" r="4"/>
+                </svg>
+              </div>
+              <div>
+                <div class="form-card__title">Médico y especialidad</div>
+              </div>
+            </div>
+            <div class="form-card__body">
+              <div class="fields-grid">
+
+                <div class="field">
+                  <label class="field__label">Especialidad <span>*</span></label>
+                  <select class="field__select">
+                    <option value="">Seleccionar...</option>
+                    <option selected>Cardiología</option>
+                    <option>Pediatría</option>
+                    <option>Traumatología</option>
+                    <option>Dermatología</option>
+                    <option>Neurología</option>
+                    <option>Ginecología</option>
+                    <option>Medicina General</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label class="field__label">Médico <span>*</span></label>
+                  <select class="field__select">
+                    <option value="">Seleccionar...</option>
+                    <option selected>Dr. Miguel Rodríguez</option>
+                    <option>Dra. Carmen Torres</option>
+                    <option>Dr. José Gómez</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <!-- Preview del médico seleccionado -->
+              <div class="doctor-preview">
+                <div class="doctor-preview__avatar">MR</div>
+                <div>
+                  <div class="doctor-preview__name">Dr. Miguel Rodríguez</div>
+                  <div class="doctor-preview__spec">Cardiólogo · 12 años de experiencia</div>
+                </div>
+                <span class="doctor-preview__avail">Disponible</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Sección 3: Fecha y hora -->
+          <div class="form-card">
+            <div class="form-card__header">
+              <div class="form-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <path d="M16 2v4M8 2v4M3 10h18"/>
+                </svg>
+              </div>
+              <div>
+                <div class="form-card__title">Fecha y hora</div>
+              </div>
+            </div>
+            <div class="form-card__body">
+              <div class="fields-grid">
+
+                <div class="field">
+                  <label class="field__label">Fecha <span>*</span></label>
+                  <input class="field__input" type="date" value="2024-12-05" />
+                </div>
+
+                <div class="field">
+                  <label class="field__label">Duración estimada</label>
+                  <select class="field__select">
+                    <option>30 minutos</option>
+                    <option selected>45 minutos</option>
+                    <option>60 minutos</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <!-- Selector visual de horarios -->
+              <div class="field" style="margin-top: 14px;">
+                <label class="field__label">Seleccionar horario <span>*</span></label>
+                <div class="time-grid" style="margin-top: 8px;">
+                  <button class="time-slot taken"   type="button">08:00</button>
+                  <button class="time-slot taken"   type="button">08:30</button>
+                  <button class="time-slot"         type="button">09:00</button>
+                  <button class="time-slot"         type="button">09:30</button>
+                  <button class="time-slot taken"   type="button">10:00</button>
+                  <button class="time-slot selected" type="button">10:30</button>
+                  <button class="time-slot"         type="button">11:00</button>
+                  <button class="time-slot"         type="button">11:30</button>
+                  <button class="time-slot taken"   type="button">12:00</button>
+                  <button class="time-slot taken"   type="button">14:00</button>
+                  <button class="time-slot"         type="button">14:30</button>
+                  <button class="time-slot"         type="button">15:00</button>
+                </div>
+                <span class="field__hint" style="margin-top: 6px;">
+                  Los horarios tachados ya están ocupados
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Sección 4: Información adicional -->
+          <div class="form-card">
+            <div class="form-card__header">
+              <div class="form-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6"/>
+                  <line x1="8" y1="12" x2="21" y2="12"/>
+                  <line x1="8" y1="18" x2="21" y2="18"/>
+                  <line x1="3" y1="6" x2="3.01" y2="6"/>
+                  <line x1="3" y1="12" x2="3.01" y2="12"/>
+                  <line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+              </div>
+              <div>
+                <div class="form-card__title">Información adicional</div>
+              </div>
+            </div>
+            <div class="form-card__body">
+              <div class="fields-grid">
+
+                <div class="field">
+                  <label class="field__label">Tipo de consulta</label>
+                  <select class="field__select">
+                    <option>Primera consulta</option>
+                    <option selected>Control / seguimiento</option>
+                    <option>Urgencia</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label class="field__label">Modalidad</label>
+                  <select class="field__select">
+                    <option selected>Presencial</option>
+                    <option>Teleconsulta</option>
+                  </select>
+                </div>
+
+                <div class="field field--full">
+                  <label class="field__label">Motivo de consulta</label>
+                  <textarea class="field__textarea" rows="3"
+                    placeholder="Describe brevemente el motivo de la cita...">Control de presión arterial y revisión de medicamentos.</textarea>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Acciones dentro de la card -->
+            <div class="form-actions">
+              <button class="btn btn--primary" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
+                Confirmar cita
+              </button>
+              <button class="btn btn--ghost" type="button">
+                Cancelar
+              </button>
+            </div>
+
+          </div>
+
+        </div><!-- fin columna izquierda -->
+
+        <!-- ========================
+             PANEL DERECHO — Resumen
+             ======================== -->
+        <div class="summary-card">
+
+          <div class="summary-card__header">Resumen de la cita</div>
+
+          <div class="summary-card__body">
+
+            <div class="summary-row">
+              <span class="summary-row__label">Paciente</span>
+              <span class="summary-row__value">Carlos Mendoza</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">DNI</span>
+              <span class="summary-row__value">45678901</span>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">Médico</span>
+              <span class="summary-row__value">Dr. Rodríguez</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">Especialidad</span>
+              <span class="summary-row__value">Cardiología</span>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">Fecha</span>
+              <span class="summary-row__value">Jue 05/12/2024</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">Hora</span>
+              <span class="summary-row__value">10:30 am</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">Duración</span>
+              <span class="summary-row__value">45 min</span>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">Tipo</span>
+              <span class="summary-row__value">Control</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">Modalidad</span>
+              <span class="summary-row__value">Presencial</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-row__label">Estado</span>
+              <span class="badge badge--orange">Pendiente</span>
+            </div>
+
+            <!-- Botón confirmar en el panel -->
+            <button class="btn btn--primary btn--full" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              Confirmar cita
+            </button>
+
+          </div>
+
+        </div><!-- fin summary-card -->
+
+      </div><!-- fin form-layout -->
+
+    </main>
+
+  </div><!-- /.layout__main -->
+
+</div><!-- /.layout -->
+
+</body>
+</html>
